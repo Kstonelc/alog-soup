@@ -57,7 +57,20 @@ export const Navbar = () => {
             href="/"
           >
             <Logo />
-            <p className="font-bold text-inherit">AlgoSoup</p>
+            <div className="flex w-full h-full ">
+              {/* eslint-disable-next-line react/no-unknown-property */}
+              <style global={"true"} jsx="true">{`
+                @import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Lobster&display=swap");
+              `}</style>
+              <h3 className="text-xl tracking-tight flex flex-col sm:flex-row items-center">
+                <span className="font-['Bungee_Shade'] text-blue-600 mb-2 sm:mb-0">
+                  Algo
+                </span>
+                <span className="font-['Lobster'] text-green-400 text-xl sm:text-xl sm:ml-2">
+                  SoupBun
+                </span>
+              </h3>
+            </div>
           </Link>
         </NavbarBrand>
         <div className="hidden lg:flex gap-4 justify-start ml-2">
