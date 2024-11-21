@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/docs",
     },
     {
+      label: "登录界面",
+      href: "/login",
+    },
+    {
       label: "Pricing",
       href: "/pricing",
     },

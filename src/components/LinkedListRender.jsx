@@ -3,11 +3,13 @@ import { Group, Arrow } from "react-konva";
 
 import { Circle } from "./common/Circle.jsx";
 
-const LinkedListRender = ({ linkedList }) => {
+const SingleLinkedListRender = ({ linkedList }) => {
   const [parseRes, setParseRes] = useState([]);
 
   useEffect(() => {
-    setParseRes(linkedList);
+    if (linkedList.values) {
+      setParseRes(linkedList.values);
+    }
   }, [linkedList]);
 
   return (
@@ -44,4 +46,4 @@ const LinkedListRender = ({ linkedList }) => {
   );
 };
 
-export default LinkedListRender;
+export default SingleLinkedListRender;

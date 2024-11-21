@@ -2,7 +2,7 @@ import { Line, Layer, Stage, Circle } from "react-konva";
 import { useEffect, useRef, useState } from "react";
 
 import DefaultLayout from "@/layouts/default.jsx";
-import { SoupLinkedList } from "@/utils/SoupNode";
+import { SoupLinkedList } from "@/utils/SoupLinkedList.js";
 import LinkedListRender from "@/components/LinkedListRender.jsx";
 import { Button } from "@nextui-org/button";
 
@@ -10,7 +10,7 @@ export default function AlgoDemo() {
   const stageDivRef = useRef();
 
   const [stageDivSize, setStageDivSize] = useState({ width: 0, height: 0 });
-  const [linkedList, setLinkedList] = useState([]);
+  const [linkedList, setLinkedList] = useState({});
 
   useEffect(() => {
     updateSize();
@@ -38,6 +38,7 @@ export default function AlgoDemo() {
     const intervalId = setInterval(() => {
       if (index < nodeList.length) {
         node.append(nodeList[index]);
+        console.log(111, node.getList());
         setLinkedList(node.getList());
         index++;
       } else {

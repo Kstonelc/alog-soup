@@ -9,6 +9,7 @@ export class SoupLinkedList {
   constructor() {
     this.head = null; // 链表头节点
     this.size = 0; // 链表长度
+    this.currentPointer = null;
   }
 
   // 添加节点到链表尾部
@@ -33,11 +34,12 @@ export class SoupLinkedList {
     let currentNode = this.head;
 
     while (currentNode) {
+      this.currentPointer = currentNode;
       values.push(currentNode.value);
       currentNode = currentNode.next;
     }
-
-    return values;
+    // 返回当前头节点 和 链表中的值
+    return { currentPointer: this.currentPointer.value, values: values };
   }
 
   // 遍历链表
@@ -65,7 +67,7 @@ export class SoupLinkedList {
     if (index < 0 || index > this.size) {
       throw new Error("Index out of bounds");
     }
-    const newNode = new SoupNode(value);
+    const newNode = new SoupLinkedList(value);
 
     if (index === 0) {
       // 插入到头部
