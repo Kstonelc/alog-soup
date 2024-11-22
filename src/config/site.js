@@ -13,6 +13,10 @@ export const siteConfig = {
       href: "/docs",
     },
     {
+      label: "学习",
+      href: "/learn",
+    },
+    {
       label: "登录界面",
       href: "/login",
     },
