@@ -1,8 +1,8 @@
 import DefaultLayout from "@/layouts/default.jsx";
+import { useNavigate } from "react-router-dom";
 import {
   Card,
   CardBody,
-  CardFooter,
   CardHeader,
   Divider,
   Image,
@@ -18,6 +18,8 @@ import {
 import ProTable from "@/components/common/ProTable.jsx";
 
 export default function Learn() {
+  const navigate = useNavigate();
+
   return (
     <DefaultLayout>
       <div className={"flex flex-row"}>
@@ -46,7 +48,14 @@ export default function Learn() {
                   />
                   <p className="text-md ml-2">链表</p>
                 </div>
-                <Button isIconOnly radius={"full"} variant="solid">
+                <Button
+                  isIconOnly
+                  radius={"full"}
+                  variant="solid"
+                  onClick={() => {
+                    navigate("/algo-panel");
+                  }}
+                >
                   <IoArrowForward />
                 </Button>
               </CardHeader>

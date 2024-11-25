@@ -7,7 +7,10 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   resolve: {
     alias: {
-      '@': '/src',  // 确保这里指向正确的目录
+      "@": "/src", // 确保这里指向正确的目录
     },
+  },
+  define: {
+    "process.env": {},
   },
 });

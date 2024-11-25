@@ -7,6 +7,7 @@ import PricingPage from "@/pages/pricing";
 import BlogPage from "@/pages/blog.jsx";
 import AboutPage from "@/pages/about.jsx";
 import Login from "@/pages/Login/index.jsx";
+import AlgoPanel from "@/pages/AlgoPanel/index.jsx";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route element={<BlogPage />} path="/blog" />
       <Route element={<AboutPage />} path="/about" />
       <Route element={<Login />} path="/login" />
+      <Route element={<AlgoPanel />} path="/algo-panel"></Route>
     </Routes>
   );
 }
